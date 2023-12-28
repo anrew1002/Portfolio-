@@ -1,0 +1,92 @@
+package com.example.colortiles
+
+import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
+
+
+data class Coord(val x: Int, val y: Int)
+class MainActivity : AppCompatActivity() {
+
+    lateinit var tiles: Array<Array<View>>
+
+    private val brightColor by lazy { resources.getColor(R.color.bright) }
+    private val darkColor by lazy { resources.getColor(R.color.dark) }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        tiles = Array(4) { row ->
+            Array(4) { col ->
+                findViewById<View>(resources.getIdentifier("t$row$col", "id", packageName))
+            }
+        }
+        for (i in 0 until 4) {
+            for (j in 0 until 4) {
+                if (Random.nextBoolean()) {
+                    tiles[i][j].setBackgroundColor(brightColor)
+                } else {
+                    tiles[i][j].setBackgroundColor(darkColor)
+                }
+
+            }
+        }
+    }
+
+    fun getCoord(s: String): Coord {
+        if (s.length == 2) {
+            val x = Character.getNumericValue(s[0])
+            val y = Character.getNumericValue(s[1])
+            return Coord(x, y)
+        } else {
+
+            return Coord(0, 0)
+        }
+    }
+
+    fun changeColor(view: View) {
+        val drawable = view.background as ColorDrawable
+        if (drawable.color == brightColor) {
+            view.setBackgroundColor(darkColor)
+        } else {
+            view.setBackgroundColor(brightColor)
+        }
+    }
+
+    fun onClick(v: View) {
+        val tag = v.tag as String
+        val coord = getCoord(tag)
+        changeColor(v)
+
+        for (i in 0 until 4) {
+            if (i != coord.x) {
+                changeColor(tiles[i][coord.y])
+            }
+            if (i != coord.y) {
+                changeColor(tiles[coord.x][i])
+            }
+        }
+
+
+        checkVictory()
+    }
+
+
+    fun checkVictory() {
+        val refColor = (tiles[0][0].background as ColorDrawable).color
+
+        for (i in 0 until 4) {
+            for (j in 0 until 4) {
+                val currColor = (tiles[i][j].background as ColorDrawable).color
+                if (currColor != refColor) {
+                    return
+                }
+            }
+        }
+        Toast.makeText(this, "Good Job!", Toast.LENGTH_SHORT).show()
+    }
+
+
+}
