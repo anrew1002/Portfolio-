@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="todo-list">
+            <div class="todo-list__header">
+                Список задач
+                <label class="todo-list__add"><button class="bl-btn todo-list__button"
+                        type="button"></button>Добавить</label>
+            </div>
+            <ul class="todo-list__list">
+                <li class="task zero-task">
+                    <input type="checkbox" class="bl-btn task__done">
+                    <span class="task__important"> 💢</span>
+                    <span class="task__discription"> Task1</span>
+                    <button class="bl-btn task__button-del" type="button"></button>
+                    <button class="bl-btn task__button-edit" type="button"></button>
+                </li>
+                <li class="task">
+                    <input type="checkbox" class="bl-btn task__done">
+                    <span class="task__important"></span>
+                    <span class="task__discription"> Task2</span>
+                    <button class="bl-btn task__button-del" type="button"></button>
+                    <button class="bl-btn task__button-edit" type="button"></button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-container ">
+            <form class="card notshown">
+                <span class="card__header"> Карточка задачи</span>
+                <span class="card__input-text"> Задача</span>
+                <input type="text" name="discription">
+                <label><input type="checkbox" name="important"> Важно 💢</label>
+                <div>
+                    <button type="submit" class="card__button-save">Сохранить</button>
+                    <button type="button" class="card__button-cancel">Отмена</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Regular", Helvetica, sans-serif;
+    background-color: rgb(235, 235, 235);
+    font-size: 17px;
+}
+
+button {
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+.bl-btn {
+    background-color: #707070;
+    border: unset;
+    color: white;
+    border-radius: 3px;
+}
+
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+}
+
+.notshown {
+    display: none;
+}
+
+.main-container {
+    width: 60%;
+    height: 2000px;
+    margin: 0px auto;
+    /* border: solid 2px red; */
+    /* background-color: rgb(247, 247, 247); */
+    /* padding: 15px; */
+    /* box-shadow: 0px 0px 10px 0px #00000029; */
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.todo-list {
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0px 0px 10px 0px #00000029;
+}
+
+.todo-list__list {
+    list-style-type: none;
+}
+
+.todo-list__header {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding: 15px 15px 0px 15px;
+}
+
+.todo-list__button {
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: -5px;
+}
+
+.todo-list__button::after,
+.todo-list__button::before {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    content: '';
+    width: 3px;
+    height: 11px;
+    background-color: white;
+    /* border: 2px solid white; */
+}
+
+.todo-list__button::before {
+    transform: rotate(90deg);
+}
+
+.todo-list__add {
+    margin-top: 7px;
+    float: right;
+    font-size: 14px;
+}
+
+
+li.task {
+    padding: 11px 15px;
+    margin-bottom: 2px;
+    background-color: rgb(235, 235, 235);
+    border: solid 2px rgb(49, 49, 49);
+    border-radius: 10px;
+    border-width: 0px 2px;
+
+}
+
+li.task button {
+    display: block;
+    float: right;
+    margin-left: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+.task__button-del {
+    background: 0% 0%/100% url('icons/trashbin@2x.png') no-repeat;
+}
+
+.task__button-edit {
+    background: 0% 0%/100% url('icons/pencil@2x.png') no-repeat;
+}
+
+.task__button-del:active,
+.task__button-edit:active {
+    background-color: rgba(0, 0, 0, 0.164);
+}
+
+
+
+input[type="checkbox"].task__done {
+
+    position: relative;
+    top: 2px;
+}
+
+.card {
+    padding: 28px 30px;
+    position: fixed;
+    width: 25%;
+    top: 50px;
+    background-color: rgb(247, 247, 247);
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px #00000029;
+    z-index: 1;
+    height: fit-content;
+
+}
+
+.card>* {
+    display: block;
+
+}
+
+.card__header {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.card__input-text {
+    margin-bottom: 5px;
+}
+
+.card input[type="text"] {
+    padding: 4px 5px 3px 5px;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.card__important {
+    position: relative;
+    top: 3px;
+    margin-bottom: 17px;
+}
+
+.card__button-save,
+.card__button-cancel {
+    padding: 8px 28px 7px 28px;
+    border-width: 0;
+    border-radius: 32px;
+
+}
+
+.card__button-save {
+    color: white;
+    background-color: #3F88E8;
+    margin-bottom: 5px;
+}
+
+.card__button-cancel {
+    background-color: white;
+    border: 1px solid #707070;
+    color: black;
+}
