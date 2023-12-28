@@ -1,0 +1,82 @@
+.tabs {
+  width: 100%;
+  float: none;
+  list-style: none;
+  position: relative;
+  margin-top: 24px;
+  text-align: left;
+}
+.tabs .tabs {
+  overflow-x: scroll;
+}
+.tabs > li {
+  float: left;
+  display: block;
+}
+.tabs input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+.tabs input[type=radio]:focus ~ label {
+  text-decoration: underline;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: #fcfcfc;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: #e2e2e2;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: scroll;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  background: #fcfcfc;
+  border: 2px solid rgb(18, 97, 172);
+}
+.tabs [id^=tab]:checked + label {
+  top: 8px;
+  padding-top: 17px;
+  background: #fcfcfc;
+  border-top: 2px solid rgb(18, 97, 172);
+  border-left: 2px solid rgb(18, 97, 172);
+  border-right: 2px solid rgb(18, 97, 172);
+  z-index: 3;
+}
+.tabs [id^=tab]:checked ~ [id^=tab-content] {
+  display: block;
+}
+
+p.link {
+  clear: both;
+  margin: 380px 0 0 15px;
+}
+p.link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #d6d6d6;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}

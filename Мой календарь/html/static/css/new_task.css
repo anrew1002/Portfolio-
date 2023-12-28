@@ -1,0 +1,108 @@
+.new_task {
+  margin-top: 8px;
+  border: 1px solid rgb(94, 94, 94);
+  padding: 10px;
+  position: relative;
+}
+
+.new_task__table input[type=submit] {
+  margin-bottom: 8px;
+}
+.new_task__table > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 auto;
+}
+.new_task__table > div > fieldset > div > div {
+  margin: 0 0 5px 0;
+}
+.new_task__table .desc {
+  width: 25%;
+  float: left;
+  padding-right: 10px;
+}
+.new_task__table > div > div, .new_task__table > div > fieldset > div {
+  width: 75%;
+  float: right;
+}
+.new_task__table > div > fieldset label {
+  font-size: 90%;
+}
+
+.cancel-form {
+  margin-bottom: 8px;
+}
+
+.delete_form {
+  font-size: 0.8rem;
+  position: absolute;
+  left: 150px;
+  top: 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+select,
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+  width: 50%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: 0;
+  border-color: rgb(94, 94, 94);
+}
+
+@media (max-width: 750px) {
+  .new_task__table > div {
+    margin: 0 0 15px 0;
+  }
+  .new_task__table > div > label {
+    width: 100%;
+    float: none;
+    margin: 0 0 5px 0;
+  }
+  .new_task__table > div > div, .new_task__table > div > fieldset > div {
+    width: 100%;
+    float: none;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  #duration,
+  textarea,
+  select {
+    width: 100%;
+  }
+  .datetime * {
+    margin-bottom: 4px;
+  }
+}
+@media (min-width: 1200px) {
+  .new_task__table > div > label {
+    text-align: right;
+  }
+}
