@@ -10,4 +10,7 @@
 ![image](https://github.com/anrew1002/Portfolio-/assets/91276494/da201545-2e8a-4b63-a562-6230d0dae695)
 # MineSweeper
 ![image](https://github.com/anrew1002/Portfolio-/assets/91276494/f47dd6d1-d273-4015-a1d3-ce18e5b3a94d)
+# Цветные шарики.
+![image](https://github.com/anrew1002/Portfolio-/assets/91276494/9ada2f85-5831-4f1d-8e9e-4ed5375460b8)
+![Uploading image.png…]()
 
